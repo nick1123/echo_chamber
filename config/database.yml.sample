@@ -1,0 +1,16 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  username: stewie
+  password: stewie
+  reconnect: false
+  min_messages: warning
+
+development:
+  <<: *defaults
+  database: parrot_development
+
+test:
+  <<: *defaults
+  database: parrot_test

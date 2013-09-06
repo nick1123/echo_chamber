@@ -1,0 +1,25 @@
+<%= form_for(@end_point) do |f| %>
+  <% if @end_point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@end_point.errors.count, "error") %> prohibited this end_point from being saved:</h2>
+
+      <ul>
+      <% @end_point.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :full_path %><br />
+    <%= f.text_field :full_path %>
+  </div>
+  <div class="field">
+    <%= f.label :response_body %><br />
+    <%= f.text_area :response_body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

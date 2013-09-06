@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Full path:</b>
+  <%= @end_point.full_path %>
+</p>
+
+<p>
+  <b>Response body:</b>
+  <%= @end_point.response_body %>
+</p>
+
+
+<%= link_to 'Edit', edit_end_point_path(@end_point) %> |
+<%= link_to 'Back', end_points_path %>
