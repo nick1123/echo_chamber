@@ -1,6 +1,7 @@
 Parrot::Application.routes.draw do
   resources :end_points
   match '*path' => 'main#index'
+  root :to => 'end_points#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
