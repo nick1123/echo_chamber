@@ -1,6 +1,10 @@
 class MainController < ApplicationController
   def index
-    end_point = EndPoint.where(:full_path => request.fullpath).first
+    full_path = request.fullpath
+    full_path.gsub!(/MAC=.+/, '') # Remove MAC query
+    full_path.gsub!(/\?$/, '')    # Remove trailing ?
+
+    end_point = EndPoint.where(:full_path => full_path).first
     if end_point.present?
       render :text => end_point.response_body
     else
