@@ -3,6 +3,7 @@ class MainController < ApplicationController
     full_path = request.fullpath
     full_path.gsub!(/MAC=.+/, '') # Remove MAC query
     full_path.gsub!(/\?$/, '')    # Remove trailing ?
+    full_path.gsub!(/&$/, '')     # Remove trailing &
 
     end_point = EndPoint.where(:full_path => full_path).first
     if end_point.present?
